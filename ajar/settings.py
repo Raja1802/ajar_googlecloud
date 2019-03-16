@@ -89,15 +89,15 @@ pymysql.install_as_MySQLdb()
 # if os.getenv('GAE_APPLICATION', None):
 #     # Running on production App Engine, so connect to Google Cloud SQL using
 #     # the unix socket at /cloudsql/<your-cloudsql-connection string>
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/burnished-block-234705:us-central1:ajarani',
-            'USER': 'ajar',
-            'PASSWORD': '9440261782',
-            'NAME': 'ajarani',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '/cloudsql/burnished-block-234705:us-central1:ajarani',
+        'USER': 'ajar',
+        'PASSWORD': '9440261782',
+        'NAME': 'ajarani',
     }
+}
 # else:
 #     # Running locally so connect to either a local MySQL instance or connect to
 #     # Cloud SQL via the proxy. To start the proxy via command line:
