@@ -79,32 +79,42 @@ WSGI_APPLICATION = 'ajar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-# if os.getenv('GAE_APPLICATION', None):
-#     # Running on production App Engine, so connect to Google Cloud SQL using
-#     # the unix socket at /cloudsql/<your-cloudsql-connection string>
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': '/cloudsql/burnished-block-234705:us-central1:ajarani',
-        'USER': 'ajar',
-        'PASSWORD': '9440261782',
-        'NAME': 'ajarani',
+# Install PyMySQL as mysqlclient/MySQLdb to use Django's mysqlclient adapter
+# See https://docs.djangoproject.com/en/2.1/ref/databases/#mysql-db-api-drivers
+# for more information
+import pymysql  # noqa: 402
+pymysql.install_as_MySQLdb()
+
+# [START db_setup]
+if os.getenv('GAE_APPLICATION', None):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/burnished-block-234705:us-central1:ajarani',
+            'USER': 'ajar',
+            'PASSWORD': '9440261782',
+            'NAME': 'ajarani',
+        }
     }
-}
-# else:
-#     # Running locally so connect to either a local MySQL instance or connect to
-#     # Cloud SQL via the proxy. To start the proxy via command line:
-#     #
-#     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
-#     #
-#     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
-   
+else:
+    # Running locally so connect to either a local MySQL instance or connect to
+    # Cloud SQL via the proxy. To start the proxy via command line:
+    #
+    #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+    #
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/burnished-block-234705:us-central1:ajarani',
+            'USER': 'ajar',
+            'PASSWORD': '9440261782',
+            'NAME': 'ajarani',
+        }
+    }
+# [END db_setup]
 #     DATABASES = {
 #         'default': {
 #             'ENGINE': 'django.db.backends.sqlite3',
