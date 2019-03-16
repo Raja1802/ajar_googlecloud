@@ -92,7 +92,8 @@ WSGI_APPLICATION = 'ajar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '/cloudsql/burnished-block-234705:us-central1:ajarani',
+        'HOST': '35.236.47.53',
+        'PORT': '3306',
         'USER': 'ajar',
         'PASSWORD': '9440261782',
         'NAME': 'ajarani',
