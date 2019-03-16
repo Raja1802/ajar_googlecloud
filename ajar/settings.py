@@ -96,7 +96,7 @@ DATABASES = {
         'PORT': '3306',
         'USER': 'ajar',
         'PASSWORD': '9440261782',
-        'NAME': 'ajarani',
+        'NAME': 'ajaranime',
     }
 }
 # else:
