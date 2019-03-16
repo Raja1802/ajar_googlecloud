@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'ajar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '35.236.47.53',
+        'HOST': '35.192.56.40',
         'PORT': '3306',
         'USER': 'ajar',
         'PASSWORD': '9440261782',
