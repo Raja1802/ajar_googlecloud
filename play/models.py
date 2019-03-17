@@ -6,7 +6,7 @@ from django.contrib.sitemaps import ping_google
 class Episode(models.Model):
     class Meta:
         db_table = 'episode'
-    anime = models.ForeignKey('info.Anime', on_delete=models.CASCADE, default=1, null=True, blank=True)
+    anime = models.ForeignKey('info.Anime', on_delete=models.CASCADE, default=19628, null=True, blank=True)
     name_anime = models.CharField(max_length=200, null=True, blank=True)
     episode = models.CharField(max_length=200, null=True, blank=True)
     download_url = models.CharField(max_length=300, null=True, blank=True)
@@ -25,8 +25,7 @@ class Episode(models.Model):
     def __str__(self):
         return self.episode
     def get_absolute_url(self):
-        if self.anime.id=='':
-            return reverse('anime_play', kwargs={'id_anime': '12167', 'episode_id': self.id})
+        return reverse('anime_play', kwargs={'id_anime': self.anime.id, 'episode_id': self.id})
        
 
 
