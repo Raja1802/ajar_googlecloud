@@ -17,6 +17,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from home.views import AnimeSitemap, EpisodeSitemap
+
+sitemaps ={
+    'anime': AnimeSitemap,
+    'episode': EpisodeSitemap,
+}
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls'), ),
@@ -24,6 +31,8 @@ urlpatterns = [
     path('anime/info/', include('info.urls'),),
     path('anime/play/', include('play.urls'),),
     path('schedule/', include('schedule.urls'), ),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = 'home.views.error_404'
