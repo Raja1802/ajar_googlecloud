@@ -25,11 +25,11 @@ class Episode(models.Model):
     def __str__(self):
         return self.episode
     def get_absolute_url(self):
-        try:
-            anime_ids = self.anime.id
-        except self.anime.id.DoesNotExist:
+        if self.anime.id!=None:
+            return reverse('anime_play', kwargs={'id_anime': self.anime.id, 'episode_id': self.id})
+        else:
             pass
-        return reverse('anime_play', kwargs={'id_anime': anime_ids, 'episode_id': self.id})
+
 
 #         if not self.anime.id.exists():
 #             pass
