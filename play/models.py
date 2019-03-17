@@ -25,7 +25,10 @@ class Episode(models.Model):
     def __str__(self):
         return self.episode
     def get_absolute_url(self):
-        return reverse('anime_play', kwargs={'id_anime': self.anime.id, 'episode_id': self.id})
+        if anime.id!=NULL:
+            return reverse('anime_play', kwargs={'id_anime': self.anime.id, 'episode_id': self.id})
+        else:
+           pass
 
     def save(self, force_insert=False, force_update=False):
         super().save(force_insert, force_update)
