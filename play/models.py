@@ -25,7 +25,6 @@ class Episode(models.Model):
     def __str__(self):
         return self.episode
     def get_absolute_url(self):
-        anime_ids = self.anime.id
         try:
             anime_ids = self.anime.id
         except self.anime.id.DoesNotExist:
