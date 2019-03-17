@@ -117,7 +117,8 @@ def error_404(request):
         }
         return render(request, 'home/error404.html', context)
   
-
+def sitemap(request):
+    return render(request, 'home/sitemap.xml')
 
 class AnimeSitemap(Sitemap):
     changefreq = "daily"
