@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib.sitemaps import Sitemap
 from django.apps import apps
 from .models import PopularAnime
 from django.contrib import messages
@@ -116,3 +116,21 @@ def error_404(request):
             'anime_top': anime_top,
         }
         return render(request, 'home/error404.html', context)
+  
+
+
+class AnimeSitemap(Sitemap):
+    changefreq = "daily"
+    priority = 1.0
+
+    def items(self):
+        return importing_info.objects.all()
+
+
+class EpisodeSitemap(Sitemap):
+    changefreq = "daily"
+    priority = 1.0
+
+    def items(self):
+        return importing_episode.objects.all()
+
