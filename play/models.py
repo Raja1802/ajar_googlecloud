@@ -28,7 +28,7 @@ class Episode(models.Model):
         try:
             anime_ids = self.anime.id
         except self.anime.id.DoesNotExist:
-            anime_ids = '12167'
+            pass
         return reverse('anime_play', kwargs={'id_anime': anime_ids, 'episode_id': self.id})
 
 #         if not self.anime.id.exists():
