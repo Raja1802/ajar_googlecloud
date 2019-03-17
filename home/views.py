@@ -127,10 +127,5 @@ class AnimeSitemap(Sitemap):
         return importing_info.objects.all()
 
 
-class EpisodeSitemap(Sitemap):
-    changefreq = "daily"
-    priority = 1.0
 
-    def items(self):
-        return importing_episode.objects.all()
 
