@@ -20,6 +20,7 @@ from . import views
 app_name = 'home'
 urlpatterns = [
     path('', views.index, name='ajar_home'),
+    path('sitemap.xml', views.sitemap, name='sitemap'),
     path('error404/', views.error_404, name='error_404'),
     path('results/', views.search, name='search'),
     path('catlog/<cat_item>', views.catlog, name='catlog'),
