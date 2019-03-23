@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.sitemaps import ping_google
 
+
 class Anime(models.Model):
     class Meta:
         db_table = 'info'
@@ -20,7 +21,6 @@ class Anime(models.Model):
     premired = models.CharField(max_length=15, null=True, blank=True)
     status = models.CharField(max_length=15, null=True, blank=True)
     types = models.CharField(max_length=15, null=True, blank=True)
-
 
     def __str__(self):
         template = '{0.name}'

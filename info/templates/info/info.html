@@ -57,7 +57,7 @@
         <meta name="theme-color" content="#171717">
         <meta name="description" content="{{data.about}}">
         <meta name="robots" content="index, follow">
-        <meta property="og:url" content="http://ajarani.ga/{% url 'anime_info' id_anime=data.id %}">
+        <meta property="og:url" content="{% url 'anime_info' id_anime=data.id %}">
         <meta property="og:title" content="{{data.name}}-Ajarani">
         <meta property="og:description" content="{{data.about}}">
         <meta property="og:site_name" content="Ajarani">

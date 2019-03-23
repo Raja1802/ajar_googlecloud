@@ -25,3 +25,4 @@ def info(request, id_anime):
     }
     return render(request, 'info/info.html', context)
 
+

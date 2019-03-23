@@ -770,18 +770,6 @@ a{
     .info_episode_buttons{
         font-size: 12px;
     }
-   .info_header_holder .info_head_overlay .info_name_holder{
-      position: relative;
-      left: 5%;
-      width: 100%;
-    }
-    .info_header_holder .info_head_overlay .info_name_holder .info_name{
-        font-size: 20px;
-        font-weight: 700;
-        z-index: 1;
-        margin: 0px;
-        text-overflow: ellipsis;
-    }
 }
   /* end info page */
   /* ------------------------------------------------------------------------------------------- */
@@ -856,10 +844,6 @@ a{
         height: 130px;
         margin-top: -30px;
     }
-  .play_navigators{
-    margin-left: 10px;
-
-}
 }
 @media screen and (max-width: 400px){
     .play_player_holder{
