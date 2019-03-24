@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.sitemaps import ping_google
-
+from django.urls import reverse
 
 class Anime(models.Model):
     class Meta:
