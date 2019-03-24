@@ -1,7 +1,5 @@
 from django.db import models
-from django.urls import reverse
 from datetime import datetime
-from django.contrib.sitemaps import ping_google
 
 
 class Episode(models.Model):
@@ -26,15 +24,4 @@ class Episode(models.Model):
     def __str__(self):
         return self.episode
 
-    def get_absolute_url(self):
-            return reverse('anime_play', kwargs={'episode_id': self.id})
 
-
-    def save(self, force_insert=False, force_update=False):
-        super().save(force_insert, force_update)
-        try:
-            ping_google()
-        except Exception:
-            # Bare 'except' because we could get a variety
-            # of HTTP-related exceptions.
-            pass

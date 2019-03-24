@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from django.contrib.sitemaps import Sitemap
+
 from django.apps import apps
 from .models import PopularAnime
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Q
 from django.core.paginator import Paginator
-from django.apps import apps
 importing_info = apps.get_model('info', 'Anime')
+from django.apps import apps
 importing_episode = apps.get_model('play', 'Episode')
 # Create your views here.
 
@@ -45,11 +45,8 @@ def search(request):
                 Q(name__icontains=query) |
                 Q(tags__icontains=query) |
                 Q(gener__icontains=query) |
-                Q(synonyms__icontains=query) |
-                Q(name__startswith=query) |
-                Q(tags__startswith=query) |
-                Q(gener__startswith=query)
-
+                Q(gener__icontains=query) |
+                Q(synonyms__icontains=query) 
             ).order_by('-scores')
             random_search = importing_info.objects.order_by('?')[:1]
             paginator = Paginator(queryset_list, 30)
@@ -121,8 +118,3 @@ def error_404(request):
             'anime_top': anime_top,
         }
         return render(request, 'home/error404.html', context)
-
-def sitemap(request):
-    return render(request, 'home/sitemap.xml')
-
-

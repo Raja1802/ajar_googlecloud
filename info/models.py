@@ -1,6 +1,4 @@
 from django.db import models
-from django.urls import reverse
-from django.contrib.sitemaps import ping_google
 
 
 class Anime(models.Model):
@@ -22,18 +20,8 @@ class Anime(models.Model):
     status = models.CharField(max_length=15, null=True, blank=True)
     types = models.CharField(max_length=15, null=True, blank=True)
 
+
     def __str__(self):
         template = '{0.name}'
         return template.format(self)
 
-    def get_absolute_url(self):
-        return reverse('anime_info', kwargs={"id_anime": self.id})
-
-    def save(self, force_insert=False, force_update=False):
-        super().save(force_insert, force_update)
-        try:
-            ping_google()
-        except Exception:
-            # Bare 'except' because we could get a variety
-            # of HTTP-related exceptions.
-            pass

@@ -24,5 +24,3 @@ def info(request, id_anime):
         'random_search': random_search,
     }
     return render(request, 'info/info.html', context)
-
-
