@@ -27,6 +27,6 @@ class Anime(models.Model):
         return template.format(self)
 
     
-    # def get_absolute_url(self):
-    #         return reverse('anime_info', kwargs={'id_anime': self.id})
+    def get_absolute_url(self):
+            return reverse('anime_info', kwargs={'id_anime': self.id})
 
