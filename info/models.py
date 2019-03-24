@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.sitemaps import ping_google
 
 
 class Anime(models.Model):
@@ -24,4 +25,8 @@ class Anime(models.Model):
     def __str__(self):
         template = '{0.name}'
         return template.format(self)
+
+    
+    # def get_absolute_url(self):
+    #         return reverse('anime_info', kwargs={'id_anime': self.id})
 

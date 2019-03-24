@@ -17,6 +17,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from home.sitemaps import TodoSitemap
+sitemaps = {
+    'todos': TodoSitemap()
+}
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls'), ),
@@ -24,6 +28,8 @@ urlpatterns = [
     path('anime/info/', include('info.urls'),),
     path('anime/play/', include('play.urls'),),
     path('schedule/', include('schedule.urls'), ),
+    path('sitemap.xml', sitemap,{'sitemaps': sitemaps}),
+    path('robots.txt', include('robots.urls'),),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = 'home.views.error_404'
