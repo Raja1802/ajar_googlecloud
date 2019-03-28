@@ -141,7 +141,7 @@
                   {% for anime_data in anime_data %}
                   <div class="mdl-cell mdl-cell--2-col   mdl-cell--2-col-phone mdl-cell--4-col-tablet" >
                       <div class="anime_thumbnail-holder">
-                        <a href="{% url 'anime_info' id_anime=anime_data.id %}"><img src="{{anime_data.image}}" alt="{{anime_data.name}}"></a>
+                        <a href="{% url 'anime_info' id_anime=anime_data.id %}"><img class="lazy" data-src="{{anime_data.image}}" alt="{{anime_data.name}}"></a>
                         <div class="anime_overlay-layer">
                           <h6 class="anime_rating" >{{anime_data.scores}}
                             <i class="material-icons">star_rate</i>
