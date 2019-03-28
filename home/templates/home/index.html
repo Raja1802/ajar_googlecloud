@@ -162,7 +162,7 @@
                   {% for popular in popular %}
                   <a href="{% url 'anime_info' id_anime=popular.anime_id %}">
                     <div class="carousel-cell " id="top_carousel_cell">
-                    <img src="{{popular.cover}}" alt="">
+                    <img class="lazy" data-src="{{popular.cover}}" alt="">
                     <div class="carousel_overlay" id="top_carousel_overlay">
                         <div>
                         <h6  class="carousel_overlay_text" id="top_carousel_overlay_text">{{popular.name}}</h6>
@@ -181,9 +181,9 @@
                   {% for episode in episode_data %}
                     <div class="mdl-cell mdl-cell--3-col   mdl-cell--12-col-phone" >
                           <div class="thumbnail-holder">
-                            <img src="{{episode.anime.image}}" alt="">
+                            <img class="lazy" data-src="{{episode.anime.image}}" alt="">
                             <div class="small_poster_space">
-                              <img src="{{episode.anime.image}}" alt="">
+                              <img class="lazy" data-src="{{episode.anime.image}}" alt="">
                             </div>
                             <a href="{% url 'anime_play'  episode_id=episode.id  id_anime=episode.anime_id %}"><div class="overlay-layer">
                               <h6 class="release_time" >{{episode.anime.durination}}</h6>
@@ -318,6 +318,10 @@
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+     <!-- jsDeliver -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
       <script type="text/javascript">
       /*Dropdown Menu*/
   $('.dropdown').click(function () {
@@ -337,7 +341,9 @@
   
       </script>
       <script type="text/javascript">
-
+         $(function() {
+                $('.lazy').Lazy();
+            });
       </script >
       <script type="text/javascript">
         $(document).ready(function(){
