@@ -58,7 +58,7 @@
                     {% for schedule in schedule_data %}
                       {% if schedule.schedule_anime_day == 'Monday'  %}
                            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone schedule_item">
-                                <img src="{{schedule.schedule_anime_image}}" alt="AJARANI">
+                                <img class="lazy" data-src="{{schedule.schedule_anime_image}}" alt="AJARANI">
                                 <a href="{{schedule.anime_info_id}}">
                                 <div class="schedule_overlay" >
                                     {% if schedule.schedule_anime_fanrelated == 't'  %}
@@ -89,7 +89,7 @@
                          {% for schedule in schedule_data %}
                       {% if schedule.schedule_anime_day == 'Tuesday'   %}
                            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone schedule_item">
-                                <img src="{{schedule.schedule_anime_image}}" alt="AJARANI">
+                                <img class="lazy" data-src="{{schedule.schedule_anime_image}}" alt="AJARANI">
                                 <a href="{{schedule.anime_info_id}}">
                                 <div class="schedule_overlay" >
                                     {% if schedule.schedule_anime_fanrelated == 't'  %}
@@ -120,7 +120,7 @@
                          {% for schedule in schedule_data %}
                       {% if schedule.schedule_anime_day == 'Wednesday'  %}
                            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone schedule_item">
-                                <img src="{{schedule.schedule_anime_image}}" alt="AJARANI">
+                                <img class="lazy" data-src="{{schedule.schedule_anime_image}}" alt="AJARANI">
                                 <a href="{{schedule.anime_info_id}}">
                                 <div class="schedule_overlay" >
                                     {% if schedule.schedule_anime_fanrelated == 't'  %}
@@ -151,7 +151,7 @@
                           {% for schedule in schedule_data %}
                       {% if schedule.schedule_anime_day == 'Thursday'  %}
                            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone schedule_item">
-                                <img src="{{schedule.schedule_anime_image}}" alt="AJARANI">
+                                <img class="lazy" data-src="{{schedule.schedule_anime_image}}" alt="AJARANI">
                                 <a href="{{schedule.anime_info_id}}">
                                 <div class="schedule_overlay" >
                                     {% if schedule.schedule_anime_fanrelated == 't'  %}
@@ -183,7 +183,7 @@
                           {% for schedule in schedule_data %}
                       {% if schedule.schedule_anime_day == 'Friday'  %}
                            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone schedule_item">
-                                <img src="{{schedule.schedule_anime_image}}" alt="AJARANI">
+                                <img class="lazy" data-src="{{schedule.schedule_anime_image}}" alt="AJARANI">
                                 <a href="{{schedule.anime_info_id}}">
                                 <div class="schedule_overlay" >
                                     {% if schedule.schedule_anime_fanrelated == 't'  %}
@@ -215,7 +215,7 @@
                           {% for schedule in schedule_data %}
                       {% if schedule.schedule_anime_day == 'Saturday'  %}
                            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone schedule_item">
-                                <img src="{{schedule.schedule_anime_image}}" alt="AJARANI">
+                                <img class="lazy" data-src="{{schedule.schedule_anime_image}}" alt="AJARANI">
                                 <a href="{{schedule.anime_info_id}}">
                                 <div class="schedule_overlay" >
                                     {% if schedule.schedule_anime_fanrelated == 't'  %}
@@ -246,7 +246,7 @@
                           {% for schedule in schedule_data %}
                       {% if schedule.schedule_anime_day == 'Sunday' %}
                            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone schedule_item">
-                                <img src="{{schedule.schedule_anime_image}}" alt="AJARANI">
+                                <img class="lazy" data-src="{{schedule.schedule_anime_image}}" alt="AJARANI">
                                 <a href="{{schedule.anime_info_id}}">
                                 <div class="schedule_overlay" >
                                     {% if schedule.schedule_anime_fanrelated == 't'  %}
