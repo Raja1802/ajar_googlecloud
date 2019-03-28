@@ -28,7 +28,6 @@ SITE_ID = 2
 
 ALLOWED_HOSTS = ["*"]
 
-SECURE_SSL_REDIRECT = True
 
 # Application definition
 
