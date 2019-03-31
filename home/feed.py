@@ -11,8 +11,7 @@ class AnimeFeed(Feed):
     link = '/anime/'
 
     def items(self):
-        return importing_info.objects.all().order_by("-id")[:10]
-
+        return importing_info.objects.all().order_by("-id")
     def item_name(self, item):
         return item.name
 
