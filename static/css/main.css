@@ -717,7 +717,7 @@ a{
     width: 100%;
     height: auto;
     padding-bottom: 10px;
-    background-color: #000000;
+    background-color: #b91818;
     border-radius: 5px;
     filter: drop-shadow(1px 1px 1px #000000);
 }
@@ -735,7 +735,7 @@ a{
    color: #cc2b2b;
 }
 #info_episode_name:hover{
-    color: rgb(196, 37, 37);
+    color: #000;
 }
 .info_episode_buttons{
     border: 1px solid #fff;
