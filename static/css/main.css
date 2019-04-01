@@ -73,8 +73,8 @@ header .mdl-menu__container.is-visible .mdl-menu{
     text-transform: capitalize;
 }
 .mdl-menu__item img{
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 /* end */
 @media screen and (max-width: 700px){
