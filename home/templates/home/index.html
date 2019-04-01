@@ -194,10 +194,10 @@
                   {% for episode in episode_data %}
                     <div class="mdl-cell mdl-cell--3-col   mdl-cell--12-col-phone" >
                           <div class="thumbnail-holder">
-                            <img class="lazy"  src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{episode.anime.image}}" alt="">
-                            <div class="small_poster_space">
-                              <img class="lazy"  src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{episode.anime.image}}" alt="">
-                            </div>
+                            <img class="lazy"  src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{episode.anime.image}}" >
+<!--                             <div class="small_poster_space">
+                              <img class="lazy"  src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{episode.anime.image}}">
+                            </div> -->
                             <a href="{% url 'anime_play'  episode_id=episode.id  id_anime=episode.anime_id %}"><div class="overlay-layer">
                               <h6 class="release_time" >{{episode.anime.durination}}</h6>
                             </div></a>
@@ -233,16 +233,6 @@
             </div>
              </div>
            </div>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-6995068514794101"
-     data-ad-slot="7320187012"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
            <!-- carousel -->
               <!-- Flickity HTML init -->
@@ -261,7 +251,7 @@
                {% for popular in popular %}
                 <a href="{% url 'anime_info' id_anime=popular.anime_id %}">
                   <div class="carousel-cell">
-                  <img class="lazy" src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{popular.cover}}" alt="">
+                  <img class="lazy" src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{popular.cover}}" >
                   <div class="carousel_overlay">
                     <h6 class="carousel_overlay_text">{{popular.name}}</h6>
                   </div>
@@ -585,10 +575,7 @@ s.setAttribute('data-timestamp', +new Date());
     }(document, 'script'));
 </script>
 <!-- 	end -->
-	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMDP9XZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+	
       </body>
 </html>
       
