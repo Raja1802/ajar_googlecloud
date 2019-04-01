@@ -45,6 +45,38 @@ a{
 .mdl-layout__header-row .mdl-navigation__link:hover{
     opacity: 1;
 }
+/* header apps menu */
+.apps{
+    opacity: 1;
+}
+header .mdl-menu{
+    left: -100px;
+}
+header .mdl-menu__container.is-visible .mdl-menu{
+    background: #171616;
+    
+}
+.mdl-menu__item:active {
+    background-color: #101010;
+}
+.mdl-menu__item:focus {
+    outline: none;
+    background-color: #232222;
+}
+.mdl-menu__item:hover {
+    background-color: #191717;
+}
+.mdl-menu__item{
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+}
+.mdl-menu__item img{
+    width: 50px;
+    height: 50px;
+}
+/* end */
 @media screen and (max-width: 700px){
     .mdl-layout__header-row .mdl-navigation__link{
         
