@@ -165,6 +165,17 @@
         {% block main_content %}
         <main class="mdl-layout__content">
           <div class="page-content">
+		  <!-- 	ads	 -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-6995068514794101"
+     data-ad-slot="7344237741"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- 	end	 -->
               <div class="carousel" id="top_carousel_header" data-flickity='{ "freeScroll": true, "wrapAround": true, "pageDots": false, "selectedAttraction": 0.01, "friction": 0.15 }'>
                   {% for popular in popular %}
                   <a href="{% url 'anime_info' id_anime=popular.anime_id %}">
@@ -227,17 +238,7 @@
             </div>
              </div>
            </div>
-<!-- 	ads	 -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ads -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:970px;height:90px"
-     data-ad-client="ca-pub-6995068514794101"
-     data-ad-slot="7344237741"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- 	end	 -->
+
 
            <!-- carousel -->
               <!-- Flickity HTML init -->
