@@ -175,7 +175,7 @@
                   {% for popular in popular %}
                   <a href="{% url 'anime_info' id_anime=popular.anime_id %}">
                     <div class="carousel-cell " id="top_carousel_cell">
-                    <img class="lazy" src="{{popular.cover}}" alt="">
+                    <img class="lazy" src="placeholder-image.jpg" data-src="{{popular.cover}}" alt="image">
                     <div class="carousel_overlay" id="top_carousel_overlay">
                         <div>
                         <h6  class="carousel_overlay_text" id="top_carousel_overlay_text">{{popular.name}}</h6>
@@ -515,6 +515,31 @@ s.setAttribute('data-timestamp', +new Date());
             })
         });
     </script>
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+	</script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <!--discord chat  -->
