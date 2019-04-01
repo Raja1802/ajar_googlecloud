@@ -97,7 +97,7 @@
                    
                     <div class="mdl-cell mdl-cell--8-col  play_player_small_holder">
                             <div class="mdl-cell mdl-cell--2-col  play_player_small_img">
-                                <img class="lazy" src="{{anime_info.image}}" >
+                                <img class="lazy"  src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{anime_info.image}}" >
                              </div>
                                   <a href="{% url 'anime_info' id_anime=anime_info.id%}" class="play_player_name" >{{episode.episode}}</a>
                            <br>
@@ -201,7 +201,7 @@ s.setAttribute('data-timestamp', +new Date());
                    {% for random in random %}
                     <a href="{% url 'anime_info'   id_anime=random.id %}">
                       <div class="carousel-cell">
-                      <img src="{{random.image}}" alt="">
+                      <img class="lazy"  src="https://lh3.googleusercontent.com/aurttTq-qPxgPqMq0u6cKd5P9xc-A5jMAal_ToO5vSCPbKhubFB-DwrtpVhBtF1Ep1q5WkthjrcQQUFsbZXRYIdoZzPLg3sCqgI8cDHJ4Bsl_FfUm-5kGfSezVxPAlGZ2UBfUwdm=w2400" data-src="{{random.image}}" alt="">
                       <div class="carousel_overlay">
                         <h6 class="carousel_overlay_text">{{random.name}}</h6>
                       </div>
