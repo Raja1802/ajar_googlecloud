@@ -515,7 +515,6 @@ s.setAttribute('data-timestamp', +new Date());
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
-          lazyImage.srcset = lazyImage.dataset.src;
           lazyImage.classList.remove("lazy");
           lazyImageObserver.unobserve(lazyImage);
         }
