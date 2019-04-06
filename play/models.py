@@ -23,5 +23,7 @@ class Episode(models.Model):
 
     def __str__(self):
         return self.episode
-
+    
+    def get_absolute_url(self):
+                return reverse('anime_play', kwargs={'id_anime': self.anime.id, 'episode_id': self.id})
 
