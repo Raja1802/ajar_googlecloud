@@ -17,12 +17,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from home.sitemaps import TodoSitemap
+from home.sitemaps import EpisodeSitemap, InfoSitemap
 from home.feed import AnimeFeed
 
 from django.contrib.sitemaps.views import sitemap
 sitemaps = {
-    'todos': TodoSitemap()
+    'episodes': EpisodeSitemap(),
+    'info': InfoSitemap()
 }
 urlpatterns = [
     path('admin/', admin.site.urls),
