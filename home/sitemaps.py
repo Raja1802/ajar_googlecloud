@@ -5,8 +5,12 @@ importing_episode = apps.get_model('play', 'Episode')
 
 
 class TodoSitemap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.5
+    changefreq = "daily"
+    priority = 0.9
+    
 
     def items(self):
-        return importing_episode.objects.all()[:10]
+        urls = {
+           'i' = importing_episode.objects.all()[:10]
+        }
+        return urls
