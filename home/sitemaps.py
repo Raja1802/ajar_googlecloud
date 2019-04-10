@@ -9,4 +9,4 @@ class TodoSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return importing_episode.objects.all()[22000:24000]
+        return importing_episode.objects.all()[24000:26000]
