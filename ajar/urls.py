@@ -31,7 +31,7 @@ urlpatterns = [
     path('anime/info/', include('info.urls'),),
     path('anime/play/', include('play.urls'),),
     path('schedule/', include('schedule.urls'), ),
-    path('s/sitemap.xml', sitemap,{'sitemaps': sitemaps}),
+    path('s_1/sitemap.xml', sitemap,{'sitemaps': sitemaps}),
     path('robots.txt', include('robots.urls'),),
     path('feed/', AnimeFeed()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
