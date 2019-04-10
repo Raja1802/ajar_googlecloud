@@ -10,7 +10,4 @@ class TodoSitemap(Sitemap):
     
 
     def items(self):
-        urls = {
-           'i': importing_episode.objects.all()[:10]
-        }
-        return urls
+        return importing_episode.objects.all()[:10]
