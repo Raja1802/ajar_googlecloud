@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'import_export',
+    'robots',
     'home',
     'anime',
     'info',
