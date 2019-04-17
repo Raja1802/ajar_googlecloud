@@ -19,7 +19,7 @@ class EpisodeSitemap_2(Sitemap):
     
 
     def items(self):
-        return importing_episode.objects.all()[20000:40000]
+        return importing_episode.objects.all()[200:400]
     
     
 class EpisodeSitemap_3(Sitemap):
