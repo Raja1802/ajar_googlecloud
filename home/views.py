@@ -99,7 +99,27 @@ def catlog(request, cat_item):
             messages.error(request, 'no results found')
 
 
-def error_404(request,):
+def error_404(request, exception):
+        anime_info = importing_info.objects.order_by('?')[:9]
+        anime_top = importing_info.objects.order_by('-scores')[:9]
+        popular = PopularAnime.objects.order_by('-id')[:9]
+        random = importing_info.objects.order_by('?')[:15]
+        random_search = importing_info.objects.order_by('?')[:1]
+        episode = importing_episode.objects.order_by('-id')[:60]
+        paginator = Paginator(episode, 12)
+        page = request.GET.get('page')
+        episode_data = paginator.get_page(page)
+        context = {
+            'random': random,
+            'random_search': random_search,
+            'episode_data': episode_data,
+            'anime_info': anime_info,
+            'popular': popular,
+            'anime_top': anime_top,
+        }
+        return render(request, 'home/error404.html', context)
+    
+def error_500(request):
         anime_info = importing_info.objects.order_by('?')[:9]
         anime_top = importing_info.objects.order_by('-scores')[:9]
         popular = PopularAnime.objects.order_by('-id')[:9]
