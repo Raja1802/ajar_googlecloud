@@ -17,13 +17,21 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from home.sitemaps import EpisodeSitemap, InfoSitemap
+from home.sitemaps import EpisodeSitemap_1,EpisodeSitemap_2,EpisodeSitemap_3, InfoSitemap
 from home.feed import AnimeFeed
 
 from django.contrib.sitemaps.views import sitemap
-sitemaps = {
-    'episodes': EpisodeSitemap(),
-    'info': InfoSitemap()
+sitemaps_1 = {
+    'episodes': EpisodeSitemap_1(),
+}
+sitemaps_2 = {
+    'episodes': EpisodeSitemap_2(),
+}
+sitemaps_3 = {
+    'episodes': EpisodeSitemap_3(),
+}
+sitemaps_4 = {
+    'anime': InfoSitemap(),
 }
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +40,10 @@ urlpatterns = [
     path('anime/info/', include('info.urls'),),
     path('anime/play/', include('play.urls'),),
     path('schedule/', include('schedule.urls'), ),
-    path('sitemap.xml', sitemap,{'sitemaps': sitemaps}),
+    path('sitemap_1.xml', sitemap,{'sitemaps': sitemaps_1}),
+    path('sitemap_2.xml', sitemap,{'sitemaps': sitemaps_2}),
+    path('sitemap_3.xml', sitemap,{'sitemaps': sitemaps_3}),
+    path('sitemap_4.xml', sitemap,{'sitemaps': sitemaps_4}),
     path('robots.txt', include('robots.urls'),),
     path('feed/', AnimeFeed()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
