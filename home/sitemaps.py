@@ -1,4 +1,5 @@
 from django.contrib.sitemaps import Sitemap
+from django.core.paginator import Paginator
 from django.apps import apps
 importing_info = apps.get_model('info', 'Anime')
 importing_episode = apps.get_model('play', 'Episode')
@@ -10,7 +11,9 @@ class EpisodeSitemap_1(Sitemap):
     
 
     def items(self):
-        return importing_episode.objects.all()[:20000]
+        urls = importing_episode.objects.all()[:20000]
+        paginator = Paginator(objects, 1000)
+        return paginator.page_range
 
     
 class EpisodeSitemap_2(Sitemap):
