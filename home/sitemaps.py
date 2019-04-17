@@ -12,7 +12,7 @@ class EpisodeSitemap_1(Sitemap):
 
     def items(self):
         urls = importing_episode.objects.all()[:20000]
-        paginator = Paginator(objects, 1000)
+        paginator = Paginator(urls, 1000)
         return paginator.page_range
 
     
