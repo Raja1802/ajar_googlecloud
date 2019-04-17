@@ -37,7 +37,7 @@ parsedatetime==2.4
 pbr==1.8.0
 psycopg2==2.7.7
 pyasn1==0.1.9
-pycurl==7.43.0
+pycurl
 pygobject==3.30.0
 PyICU==1.9.2
 PyJWT==1.3.0
