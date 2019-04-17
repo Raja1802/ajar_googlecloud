@@ -38,6 +38,6 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = 'home.views.error_404'
-handler403 = 'home.views.error_403'
-handler500 = 'home.views.error_500'
-handler400 = 'home.views.error_400'
+handler403 = 'home.views.error_404'
+handler500 = 'home.views.error_404'
+handler400 = 'home.views.error_404'
