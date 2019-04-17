@@ -12,7 +12,7 @@ class EpisodeSitemap_1(Sitemap):
     
 
     def items(self):
-        return importing_episode.objects.all()[:20000]
+        return importing_episode.objects.order_by('-id')[:20000]
     
     
 class EpisodeSitemap_2(Sitemap):
@@ -21,7 +21,7 @@ class EpisodeSitemap_2(Sitemap):
     
 
     def items(self):
-        return importing_episode.objects.all()[20001:40000]
+        return importing_episode.objects.order_by('-id')[20001:40000]
     
     
 class EpisodeSitemap_3(Sitemap):
@@ -30,7 +30,7 @@ class EpisodeSitemap_3(Sitemap):
     
 
     def items(self):
-        return importing_episode.objects.all()[40001:80000]
+        return importing_episode.objects.order_by('-id')[40001:80000]
     
 class InfoSitemap(Sitemap):
     changefreq = "daily"
@@ -38,4 +38,4 @@ class InfoSitemap(Sitemap):
     
 
     def items(self):
-        return importing_info.objects.all()
+        return importing_info.objects.order_by('-id')
