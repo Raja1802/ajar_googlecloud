@@ -12,12 +12,8 @@ class EpisodeSitemap_1(Sitemap):
     
 
     def items(self):
-        urls = importing_episode.objects.all()[:20000]
-        paginator = Paginator(urls, 1000)
-        return paginator.page_range
-    def location(self, page):
-        return reverse('anime_play',  kwargs={'id_anime': importing_episode.anime.id, 'episode_id': importing_episode.id})
-
+        return importing_episode.objects.all()[:20000]
+    
     
 class EpisodeSitemap_2(Sitemap):
     changefreq = "daily"
