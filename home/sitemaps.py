@@ -14,6 +14,8 @@ class EpisodeSitemap_1(Sitemap):
         urls = importing_episode.objects.all()[:20000]
         paginator = Paginator(urls, 1000)
         return paginator.page_range
+    def location(self, page):
+        return reverse('anime_play',  kwargs = {'page': page})
 
     
 class EpisodeSitemap_2(Sitemap):
